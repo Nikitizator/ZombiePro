@@ -29,3 +29,4 @@ script = ExtResource("2_7vrkn")
 
 [connection signal="pressed" from="Button" to="Button" method="_start_game_button"]
 [connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_button"]
+[connection signal="toggled" from="CheckButton" to="CheckButton" method="_on_check_button_toggled"]

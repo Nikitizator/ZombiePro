@@ -21,6 +21,10 @@ boot_splash/image="uid://bys0o5o4134gw"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=1000
 
+[autoload]
+
+Global="*uid://l0fir1lbcv4f"
+
 [display]
 
 window/size/viewport_width=1024

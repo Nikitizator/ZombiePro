@@ -1,12 +1,13 @@
-extends CheckButton
+extends Node
 
 var difficult = 5
 
-func _on_button():
-	print(button_pressed)
-	if button_pressed:
-		var difficult = 10
-		print(difficult)
-		return
-	return
+func set_difficulty(is_pressed: bool):
+	if is_pressed:
+		difficult = 10
 	
+
+
+func _on_check_button_toggled(toggled_on):
+	# Вызываем функцию из глобального скрипта и передаем состояние
+	Global.set_difficulty(toggled_on)

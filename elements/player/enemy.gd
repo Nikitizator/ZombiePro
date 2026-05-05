@@ -9,7 +9,6 @@ var is_chasing : bool = false
 
 
 func _ready():
-	print(player)
 	var found = get_tree().get_nodes_in_group("player")
 	if found.size() > 0:
 		player = found[0]
@@ -44,4 +43,5 @@ func _idle(delta):
 
 func _update_facing(direction: Vector2):
 	if direction.x != 0:
+		# Используем abs, чтобы не сбить масштаб, если он изначально не 1
 		scale.x = abs(scale.x) * sign(direction.x)

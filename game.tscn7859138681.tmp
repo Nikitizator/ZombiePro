@@ -31,3 +31,7 @@ position = Vector2(427, 297)
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1233627053]
 script = ExtResource("5_7jktm")
+spawn_area_min = null
+spawn_area_max = null
+min_enemies = null
+max_enemies = null
