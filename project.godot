@@ -10,10 +10,16 @@ config_version=5
 
 [application]
 
-config/name="zombiePro"
-run/main_scene="uid://ckqlt23hw4hbi"
+config/name="zombiePro 1.0"
+run/main_scene="uid://cgvdwjodqslq"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+boot_splash/stretch_mode=0
+boot_splash/use_filter=false
+boot_splash/image="uid://bys0o5o4134gw"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=1000
 
 [display]
 

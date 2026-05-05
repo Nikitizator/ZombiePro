@@ -44,5 +44,4 @@ func _idle(delta):
 
 func _update_facing(direction: Vector2):
 	if direction.x != 0:
-		# Используем abs, чтобы не сбить масштаб, если он изначально не 1
 		scale.x = abs(scale.x) * sign(direction.x)

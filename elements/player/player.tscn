@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b0pfgnuy4slvq" path="res://assets/player.png" id="1_ktrpi"]
 [ext_resource type="Script" uid="uid://cykvs0edvfk1u" path="res://elements/player/player.gd" id="1_lh3fu"]
 [ext_resource type="Script" uid="uid://bbryqc2kdjgaj" path="res://elements/player/collision_shape_2d.gd" id="3_lgvkd"]
+[ext_resource type="Texture2D" uid="uid://fystp10vowil" path="res://assets/Healthbar/greenbar (3).png" id="4_338lt"]
+[ext_resource type="Texture2D" uid="uid://b4bwa0rt7calv" path="res://assets/Healthbar/greenbar (2).png" id="5_h2kxm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lh3fu"]
 radius = 11.0
@@ -14,11 +16,25 @@ platform_wall_layers = 1
 script = ExtResource("1_lh3fu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1374932022]
-position = Vector2(0, 13.999999)
+position = Vector2(0, 14)
 scale = Vector2(0.17578125, 0.18455529)
 texture = ExtResource("1_ktrpi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696253944]
-position = Vector2(0, -6)
+position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_lh3fu")
 script = ExtResource("3_lgvkd")
+
+[node name="healthbar" type="TextureProgressBar" parent="." unique_id=942002680]
+modulate = Color(1, 1, 1, 0.7176471)
+offset_left = -18.0
+offset_top = -53.0
+offset_right = 22.0
+offset_bottom = -13.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_338lt")
+texture_progress = ExtResource("5_h2kxm")
+texture_progress_offset = Vector2(0, 4)
+tint_under = Color(0.1764706, 0.1764706, 0.1764706, 1)
+tint_progress = Color(0, 0.81960785, 0, 1)

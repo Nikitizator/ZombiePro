@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cgvdwjodqslq"]
+
+[ext_resource type="Script" uid="uid://kd87ycg8r0xd" path="res://button_start.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://l0fir1lbcv4f" path="res://check_button.gd" id="2_7vrkn"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=150330026]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=797231082]
+offset_right = 1024.0
+offset_bottom = 1024.0
+color = Color(1.291, 1.291, 1.291, 0.173)
+
+[node name="Button" type="Button" parent="." unique_id=741343886 groups=["button"]]
+offset_left = 448.0
+offset_top = 384.0
+offset_right = 576.0
+offset_bottom = 448.0
+text = "Начать игру"
+script = ExtResource("1_06t4h")
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=2126051333 groups=["button"]]
+offset_left = 384.0
+offset_top = 496.0
+offset_right = 640.0
+offset_bottom = 527.0
+text = "Повышенная сложность"
+alignment = 1
+script = ExtResource("2_7vrkn")
+
+[connection signal="pressed" from="Button" to="Button" method="_start_game_button"]
+[connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_button"]
