@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://ckqlt23hw4hbi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ixevo41bk8x" path="res://elements/player/player.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://da0sar0l707m" path="res://elements/player/enemy.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://br57gxf4ecnao" path="res://elements/player/wall.tscn" id="3_feb5d"]
 
 [node name="Game" type="Node2D" unique_id=1578736224]
-position = Vector2(143, 113)
-
-[node name="Player" parent="." unique_id=1909433924 instance=ExtResource("2_feb5d")]
-position = Vector2(183, 147)
+position = Vector2(141, 113)
 
 [node name="StaticBody2D" parent="." unique_id=1717271830 instance=ExtResource("3_feb5d")]
 position = Vector2(-145, -120)
@@ -22,3 +20,8 @@ rotation = 1.5707964
 [node name="StaticBody2D4" parent="." unique_id=1663515776 instance=ExtResource("3_feb5d")]
 position = Vector2(888, 930)
 rotation = 1.5707964
+
+[node name="Enemy" parent="." unique_id=529983031 instance=ExtResource("3_fc0e3")]
+
+[node name="player" parent="." unique_id=1909433924 instance=ExtResource("2_feb5d")]
+position = Vector2(427, 297)
