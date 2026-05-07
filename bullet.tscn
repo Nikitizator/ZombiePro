@@ -1,34 +1,27 @@
-[gd_scene format=3 uid="uid://dxg2gx1itfbkr"]
+[gd_scene format=3 uid="uid://doiwx5dfvh00o"]
 
 [ext_resource type="Script" uid="uid://xb313nn6lqw1" path="res://bullet.gd" id="1_t4vbm"]
-[ext_resource type="Texture2D" uid="uid://bgdkmli0gcooo" path="res://assets/enemy/bullet.png" id="1_v8qja"]
-[ext_resource type="Texture2D" uid="uid://bnqby8fjx1gjh" path="res://assets/enemy/bullet1.png" id="2_t4vbm"]
+[ext_resource type="Texture2D" uid="uid://4xw6ym0tkyig" path="res://assets/bullet.png" id="1_v8qja"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2b2rl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_v8qja")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_t4vbm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_v8qja"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f7cwy"]
 radius = 2.0
+height = 8.0
 
-[node name="Bullet" type="CharacterBody2D" unique_id=1840795609]
+[node name="Area2D" type="Area2D" unique_id=1138893507]
 script = ExtResource("1_t4vbm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713036200]
-scale = Vector2(0.03600396, 0.024749996)
-sprite_frames = SubResource("SpriteFrames_2b2rl")
-autoplay = "default"
-frame_progress = 0.39653316
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=57114004]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_f7cwy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073276819]
-shape = SubResource("CircleShape2D_v8qja")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1748873100]
+position = Vector2(3.8125021, 6.8437486)
+scale = Vector2(0.047968745, 0.05017089)
+texture = ExtResource("1_v8qja")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=432373550]
+position = Vector2(0, 1)
+rect = Rect2(-5, -5, 10, 8)
+
+[connection signal="body_entered" from="." to="VisibleOnScreenNotifier2D" method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

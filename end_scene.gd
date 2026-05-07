@@ -6,3 +6,4 @@ func _on_main_menu():
 
 func _on_restart():
 	get_tree().change_scene_to_file("res://game.tscn")
+	

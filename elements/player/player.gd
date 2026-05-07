@@ -41,6 +41,7 @@ func _physics_process(delta):
 
 # получение по жопе
 func take_damage(amount: float):
+	print("ПОлучил урон")
 	if current_health <= 0:
 		return  # сдох
 	current_health -= amount
@@ -57,3 +58,27 @@ func die():
 	get_tree().change_scene_to_file("res://end_scene.tscn")
 	# сюда анимку смерти
 	queue_free()
+
+var bullet_scene = preload("res://bullet.tscn")
+
+# Ссылка на наш Marker2D
+
+
+func _process(_delta):
+	# Проверяем нажатие кнопки (по умолчанию "ui_accept" это Пробел или Enter)
+	if Input.is_action_just_pressed("shot"):
+		shoot()
+
+func shoot():
+	# Создаем экземпляр (копию) пули из файла
+	var bullet = bullet_scene.instantiate()
+	
+	# Добавляем пулю в основную сцену игры (owner — это корень текущей сцены)
+	# Это важно, чтобы пуля не двигалась вместе с игроком после выстрела
+	get_tree().root.add_child(bullet)
+	bullet.global_position = global_position
+	
+	bullet.look_at(get_global_mouse_position())
+	# Переносим пулю в точку Muzzle и даем ей то же направление (поворот)
+	#bullet.global_position = muzzle.global_position
+	#bullet.global_rotation = muzzle.global_rotation

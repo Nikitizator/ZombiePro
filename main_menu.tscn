@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://l0fir1lbcv4f" path="res://check_button.gd" id="2_7vrkn"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=150330026]
+process_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=797231082]
 offset_right = 1024.0

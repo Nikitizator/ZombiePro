@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkds80u1qiggt"
-path="res://.godot/imported/background.jpg-3c1ee7bbff6a1283595ccc69bb1d6acd.ctex"
+uid="uid://c2u76rxkuwsrc"
+path="res://.godot/imported/stenkk.png.png-88afb51aefca4c02640c638a541a6b66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background.jpg"
-dest_files=["res://.godot/imported/background.jpg-3c1ee7bbff6a1283595ccc69bb1d6acd.ctex"]
+source_file="res://stenkk.png.png"
+dest_files=["res://.godot/imported/stenkk.png.png-88afb51aefca4c02640c638a541a6b66.ctex"]
 
 [params]
 

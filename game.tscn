@@ -5,29 +5,36 @@
 [ext_resource type="PackedScene" uid="uid://da0sar0l707m" path="res://elements/player/enemy.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://br57gxf4ecnao" path="res://elements/player/wall.tscn" id="3_feb5d"]
 [ext_resource type="Script" uid="uid://cfaeipl5t1t85" path="res://elements/player/enemy_spawner.gd" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://doiwx5dfvh00o" path="res://bullet.tscn" id="6_ryrav"]
 
 [node name="Game" type="Node2D" unique_id=1578736224]
+process_mode = 3
 position = Vector2(141, 113)
 script = ExtResource("1_fc0e3")
 
 [node name="StaticBody2D" parent="." unique_id=1717271830 instance=ExtResource("3_feb5d")]
-position = Vector2(-145, -120)
+position = Vector2(-122, -125)
 
 [node name="StaticBody2D2" parent="." unique_id=996768023 instance=ExtResource("3_feb5d")]
 position = Vector2(900, -120)
 
 [node name="StaticBody2D3" parent="." unique_id=1902844875 instance=ExtResource("3_feb5d")]
-position = Vector2(888, -114)
+position = Vector2(908, -94)
 rotation = 1.5707964
 
 [node name="StaticBody2D4" parent="." unique_id=1663515776 instance=ExtResource("3_feb5d")]
-position = Vector2(888, 930)
+position = Vector2(911.00006, 930)
 rotation = 1.5707964
 
 [node name="player" parent="." unique_id=1909433924 instance=ExtResource("2_feb5d")]
+process_mode = 1
 position = Vector2(427, 297)
+
+[node name="Area2D" parent="player" unique_id=1138893507 instance=ExtResource("6_ryrav")]
+process_mode = 1
 
 [node name="enemy" parent="." unique_id=529983031 instance=ExtResource("3_fc0e3")]
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1233627053]
+process_mode = 1
 script = ExtResource("5_7jktm")

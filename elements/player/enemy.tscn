@@ -1,35 +1,62 @@
 [gd_scene format=3 uid="uid://da0sar0l707m"]
 
-[ext_resource type="Texture2D" uid="uid://bfpksjsdiomlx" path="res://assets/enemy/enemy1.png" id="1_cqawo"]
 [ext_resource type="Script" uid="uid://dsgthjerbjsy3" path="res://elements/player/enemy.gd" id="1_vwdsv"]
-[ext_resource type="Texture2D" uid="uid://rdhkb3jeeamo" path="res://assets/enemy/enemy2.png" id="2_vwdsv"]
+[ext_resource type="Texture2D" uid="uid://5x2x74pixee0" path="res://assets/enemy/enemy.png" id="2_f84jm"]
+[ext_resource type="Texture2D" uid="uid://fystp10vowil" path="res://assets/Healthbar/greenbar (3).png" id="4_gxpxf"]
+[ext_resource type="Texture2D" uid="uid://b4bwa0rt7calv" path="res://assets/Healthbar/greenbar (2).png" id="5_3q05a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f84jm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_cqawo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_vwdsv")
+"texture": ExtResource("2_f84jm")
 }],
 "loop": true,
 "name": &"default",
 "speed": 3.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxpxf"]
-height = 40.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3q05a"]
+height = 42.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=529983031]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxpxf"]
+height = 42.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=529983031 groups=["enemy"]]
+process_mode = 1
+position = Vector2(172, 156)
 script = ExtResource("1_vwdsv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1525248080]
-position = Vector2(-4.5, -0.5)
+position = Vector2(0.6093735, -4.9999986)
+scale = Vector2(0.056378078, 0.05276175)
 sprite_frames = SubResource("SpriteFrames_f84jm")
 autoplay = "default"
 frame_progress = 0.82043546
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1249552805]
-position = Vector2(-0.5, -0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1744582811]
+shape = SubResource("CapsuleShape2D_3q05a")
+
+[node name="healthbar" type="TextureProgressBar" parent="." unique_id=825782779]
+modulate = Color(1, 1, 1, 0.7176471)
+offset_left = -18.0
+offset_top = -41.0
+offset_right = 22.0
+offset_bottom = -1.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_gxpxf")
+texture_progress = ExtResource("5_3q05a")
+texture_progress_offset = Vector2(0, 4)
+tint_under = Color(0.1764706, 0.1764706, 0.1764706, 1)
+tint_progress = Color(0.8311118, 2.9841065e-06, 1.0588765e-06, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=774944349]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1270514394]
 shape = SubResource("CapsuleShape2D_gxpxf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_attack_area_body_entered"]
