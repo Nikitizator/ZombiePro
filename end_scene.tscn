@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bep4tc4ftty80" path="res://end_scene.gd" id="1_3wcc1"]
 
 [node name="end_scene" type="CanvasLayer" unique_id=964303970]
-script = ExtResource("1_3wcc1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1290654462]
 anchors_preset = 8
@@ -47,6 +46,7 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 4
 text = "Рестарт"
+script = ExtResource("1_3wcc1")
 
 [node name="inmenu" type="Button" parent="ColorRect" unique_id=1722531731 groups=["button"]]
 layout_mode = 1
@@ -58,6 +58,7 @@ offset_right = 80.0
 grow_vertical = 0
 size_flags_horizontal = 4
 text = "В Меню"
+script = ExtResource("1_3wcc1")
 
-[connection signal="pressed" from="ColorRect/restart" to="." method="_on_restart"]
-[connection signal="pressed" from="ColorRect/inmenu" to="." method="_on_main_menu"]
+[connection signal="pressed" from="ColorRect/restart" to="ColorRect/restart" method="_on_restart"]
+[connection signal="pressed" from="ColorRect/inmenu" to="ColorRect/inmenu" method="_on_main_menu"]
