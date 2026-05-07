@@ -18,7 +18,7 @@ boot_splash/show_image=false
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 boot_splash/image="uid://bys0o5o4134gw"
-config/icon="res://icon.svg"
+config/icon="uid://bys0o5o4134gw"
 boot_splash/minimum_display_time=1000
 
 [autoload]

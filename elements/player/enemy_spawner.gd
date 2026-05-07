@@ -7,14 +7,14 @@ extends Node2D
 @export var spawn_area_max : Vector2 = Vector2(400, 400)
 
 # Настройки количества
-@export var min_enemies : int = 1
+@export var min_enemies : int = 5
 @export var max_enemies : int = 10
 
 
 func _ready() -> void:
-	if Global.difficult == 10:
-		min_enemies = 20
-		max_enemies = 40
+	if Global.difficult == true:
+		min_enemies = 30
+		max_enemies = 60
 		print("спавн")
 		
 	spawn_random_group(min_enemies, max_enemies)
@@ -34,7 +34,7 @@ func spawn_enemy():
 	enemy.global_position = Vector2(random_x, random_y)
 	
 	# Добавляем врага в дерево сцен
-	get_parent().add_child.call_deferred(enemy)
+	add_child.call_deferred(enemy)
 	
 
 	

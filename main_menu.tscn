@@ -1,33 +1,66 @@
 [gd_scene format=3 uid="uid://cgvdwjodqslq"]
 
-[ext_resource type="Script" uid="uid://kd87ycg8r0xd" path="res://button_start.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://bep4tc4ftty80" path="res://end_scene.gd" id="1_fu7sn"]
 [ext_resource type="Script" uid="uid://l0fir1lbcv4f" path="res://check_button.gd" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://bu0xj4b8s2x6c" path="res://button_exit.gd" id="3_fu7sn"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=150330026]
 process_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=797231082]
-offset_right = 1024.0
-offset_bottom = 1024.0
+offset_right = 1056.0
+offset_bottom = 1056.0
 color = Color(1.291, 1.291, 1.291, 0.173)
 
-[node name="Button" type="Button" parent="." unique_id=741343886 groups=["button"]]
-offset_left = 448.0
-offset_top = 384.0
-offset_right = 576.0
-offset_bottom = 448.0
+[node name="start" type="Button" parent="." unique_id=741343886 groups=["button"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -136.0
+offset_right = 64.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 text = "Начать игру"
-script = ExtResource("1_06t4h")
+script = ExtResource("1_fu7sn")
 
-[node name="CheckButton" type="CheckButton" parent="." unique_id=2126051333 groups=["button"]]
-offset_left = 384.0
-offset_top = 496.0
-offset_right = 640.0
-offset_bottom = 527.0
+[node name="change" type="CheckButton" parent="." unique_id=2126051333 groups=["button"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -40.0
+offset_right = 128.0
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Повышенная сложность"
 alignment = 1
 script = ExtResource("2_7vrkn")
 
-[connection signal="pressed" from="Button" to="Button" method="_start_game_button"]
-[connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_button"]
-[connection signal="toggled" from="CheckButton" to="CheckButton" method="_on_check_button_toggled"]
+[node name="exit" type="Button" parent="." unique_id=1504911233]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = 26.0
+offset_right = 65.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Выйти из игры"
+script = ExtResource("3_fu7sn")
+
+[connection signal="pressed" from="start" to="start" method="_on_restart"]
+[connection signal="pressed" from="start" to="start" method="_start_game_button"]
+[connection signal="pressed" from="change" to="change" method="_on_button"]
+[connection signal="toggled" from="change" to="change" method="_on_check_button_toggled"]
+[connection signal="pressed" from="exit" to="exit" method="_exit_game_button"]

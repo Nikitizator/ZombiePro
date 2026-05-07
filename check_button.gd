@@ -1,13 +1,11 @@
+#Скрипт чтобы менять уровень сложности
 extends Node
 
-var difficult = 5
+var difficult = false
 
 func set_difficulty(is_pressed: bool):
 	if is_pressed:
-		difficult = 10
-	
-
+		difficult = true
 
 func _on_check_button_toggled(toggled_on):
-	# Вызываем функцию из глобального скрипта и передаем состояние
 	Global.set_difficulty(toggled_on)

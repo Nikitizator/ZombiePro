@@ -7,7 +7,7 @@
 radius = 2.0
 height = 8.0
 
-[node name="Area2D" type="Area2D" unique_id=1138893507]
+[node name="Bullet" type="Area2D" unique_id=1138893507]
 script = ExtResource("1_t4vbm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=57114004]
@@ -24,4 +24,3 @@ position = Vector2(0, 1)
 rect = Rect2(-5, -5, 10, 8)
 
 [connection signal="body_entered" from="." to="VisibleOnScreenNotifier2D" method="_on_body_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

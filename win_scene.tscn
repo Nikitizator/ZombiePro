@@ -1,11 +1,10 @@
-[gd_scene format=3 uid="uid://dnwf01qryicbh"]
+[gd_scene format=3 uid="uid://bcg1w64usjqt1"]
 
-[ext_resource type="Script" uid="uid://bep4tc4ftty80" path="res://end_scene.gd" id="1_w45hp"]
+[ext_resource type="Script" uid="uid://bep4tc4ftty80" path="res://end_scene.gd" id="1_k8wnm"]
 
-[node name="pause_scene" type="CanvasLayer" unique_id=1430781735]
-process_mode = 3
+[node name="CanvasLayer" type="CanvasLayer" unique_id=102854045]
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=993316397]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=843792893]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -21,7 +20,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(1.291, 1.291, 1.291, 0.173)
 
-[node name="Label" type="Label" parent="ColorRect2" unique_id=829204514]
+[node name="Label" type="Label" parent="ColorRect" unique_id=885949079]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -30,11 +29,11 @@ offset_left = -50.0
 offset_right = 51.0
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "Пауза"
+text = "Вы победили!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="restart" type="Button" parent="ColorRect2" unique_id=1408974420 groups=["button"]]
+[node name="restart" type="Button" parent="ColorRect" unique_id=1584846082 groups=["button"]]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -47,9 +46,9 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 4
 text = "Рестарт"
-script = ExtResource("1_w45hp")
+script = ExtResource("1_k8wnm")
 
-[node name="inmenu" type="Button" parent="ColorRect2" unique_id=1602571807 groups=["button"]]
+[node name="inmenu" type="Button" parent="ColorRect" unique_id=2014279180 groups=["button"]]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -59,7 +58,7 @@ offset_right = 80.0
 grow_vertical = 0
 size_flags_horizontal = 4
 text = "В Меню"
-script = ExtResource("1_w45hp")
+script = ExtResource("1_k8wnm")
 
-[connection signal="pressed" from="ColorRect2/restart" to="ColorRect2/restart" method="_for_pause_restart"]
-[connection signal="pressed" from="ColorRect2/inmenu" to="ColorRect2/inmenu" method="_for_pause_main_menu"]
+[connection signal="pressed" from="ColorRect/restart" to="ColorRect/restart" method="_on_restart"]
+[connection signal="pressed" from="ColorRect/inmenu" to="ColorRect/inmenu" method="_on_main_menu"]
